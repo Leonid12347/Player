@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Audio Player</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>Аудиоплеер</title>
 </head>
 <body>
+    <div class="player-container">
+        <button class="addlists" onclick="openFileInput()">Добавить песню</button>
+        <button class="toggle-list" onclick="toggleSongList()">
+            <span id="toggleIcon">&#9660;</span>
+        </button>
+        <input type="file" id="fileInput" accept=".mp3" style="display: none" onchange="addSong()" />
+        
+        <ul id="songList" onclick="playSong(event)">
+        </ul>
 
-<script src="script.js"></script>
+        <audio controls="controls" id="audioPlayer"></audio>
+    </div>
 
+    <script src="/index.js"></script>
 </body>
 </html>
